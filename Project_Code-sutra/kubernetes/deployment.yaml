@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code-sutra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: code-sutra
+  template:
+    metadata:
+      labels:
+        app: code-sutra
+    spec:
+      containers:
+      - name: code-sutra
+        image: yourdockerhub/code-sutra:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: TELEGRAM_BOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: code-sutra-secrets
+              key: TELEGRAM_BOT_TOKEN
+        - name: TELEGRAM_CHAT_ID
+          valueFrom:
+            secretKeyRef:
+              name: code-sutra-secrets
+              key: TELEGRAM_CHAT_ID
