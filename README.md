@@ -134,4 +134,4 @@ docker-compose down
 
 ## 📫 Contact
 
-Built with ❤️ by [Sameer Gupta](https://github.com/SameerGupta-Dev)
+Built with ❤️ by [Sameer Gupta](https://github.com/SameerG16)
